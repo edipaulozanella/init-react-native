@@ -27,7 +27,7 @@ export default class App extends React.Component {
     };
     return (
       <Provider store={store}>
-        <Nav {...this.props} screenProps={screenProps} store={store} />
+        <Nav {...this.props} screenProps={screenProps} onNavigationStateChange={null} store={store} />
       </Provider>
     );
   }

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { StyleSheet, Navigator, Content } from "react-native-1app";
+import { StyleSheet, Content } from "react-native-1app";
+import Pesquisa from "./Pesquisa.js";
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {};
-    Navigator.cloneState(this);
+
     //this.onConstructor(props,this.state)
   }
 
