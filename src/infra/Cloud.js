@@ -1,6 +1,6 @@
 // var host = "http://localhost:7000/v1";
 var token_api = "kajhdlkJASTOKEN";
-var host = "https://painel.vero.online/v1";
+var host = "https://painel.server.online/v1";
 
 module.exports = {
   getHost() {
