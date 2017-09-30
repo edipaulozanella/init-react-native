@@ -58,7 +58,6 @@
 		<string>MaterialIcons.ttf</string>
 		<string>materialdesignicons-webfont.ttf</string>
 
-		{fonts}
 	</array>
 
       <key>LSApplicationQueriesSchemes</key>
