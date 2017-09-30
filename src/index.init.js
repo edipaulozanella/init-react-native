@@ -1,7 +1,8 @@
 import React from "react";
 import { AppRegistry, AppState, StyleSheet } from "react-native";
-import { View, Icon, Image, Navigator } from "react-native-1app";
+import { View, Icon, Image, Navigator,ImageUpload } from "react-native-1app";
 import { StackNavigator } from "react-navigation";
+import { Model,Query,Cloud } from "./infra";
 
 import { Provider, connect } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
@@ -17,8 +18,18 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-  }
+    
+    Model.setHost(Cloud.getHost());
+    Query.setHost(Cloud.getHost());
+    ImageUpload.setHost(Cloud.getHost());
+    // File.setHost(Cloud.getHost());
 
+    Model.setToken(Cloud.getToken());
+    Query.setToken(Cloud.getToken());
+    ImageUpload.setToken(Cloud.getToken());
+    // File.setToken(Cloud.setToken());
+  }
+    
   render() {
     let screenProps = {
       store: store,
