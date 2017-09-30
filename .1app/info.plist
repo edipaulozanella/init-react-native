@@ -51,13 +51,30 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-        {id_facebook}
+        
+        <key>FacebookAppID</key>
+		<string>{key_id_app_facebook}</string>
+<key>FacebookDisplayName</key>
+	<string>{nome}</string>
 
-				<key>UIAppFonts</key>
+
+<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb{key_id_app_facebook}</string>
+				<string>{tagName}</string>
+			</array>
+		</dict>
+	</array>
+
+	<key>UIAppFonts</key>
 	<array>
 		<string>MaterialIcons.ttf</string>
 		<string>materialdesignicons-webfont.ttf</string>
 
+		{fonts}
 	</array>
 
       <key>LSApplicationQueriesSchemes</key>

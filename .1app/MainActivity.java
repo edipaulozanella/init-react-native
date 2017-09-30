@@ -1,4 +1,4 @@
-package com.vero.app.mobi;
+package {key_package_android};
 
 import android.content.Intent;
 

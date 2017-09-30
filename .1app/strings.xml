@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">{nome}</string>
+    <string name="fb_app_id">{key_id_app_facebook}</string>
+</resources>
