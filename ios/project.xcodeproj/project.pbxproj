@@ -48,6 +48,7 @@
 		8BDC11A21F7C450D001DD893 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDC11A11F7C450D001DD893 /* MapKit.framework */; };
 		8BDC11A41F7C4519001DD893 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDC11A31F7C4519001DD893 /* AudioToolbox.framework */; };
 		8BDC11AB1F7C465A001DD893 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BDC11AA1F7C45A8001DD893 /* libAirMaps.a */; };
+		8BE13CD61F804B82009FEC72 /* libRNFIRMessaging.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BE13CD51F804B67009FEC72 /* libRNFIRMessaging.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 /* End PBXBuildFile section */
 
@@ -290,6 +291,13 @@
 			remoteGlobalIDString = 11FA5C511C4A1296003AC2EE;
 			remoteInfo = AirMaps;
 		};
+		8BE13CD41F804B67009FEC72 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8BE13CD01F804B67009FEC72 /* RNFIRMessaging.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNFIRMessaging;
+		};
 		ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -343,6 +351,7 @@
 		8BDC11A11F7C450D001DD893 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8BDC11A31F7C4519001DD893 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8BDC11A51F7C45A8001DD893 /* AirMaps.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
+		8BE13CD01F804B67009FEC72 /* RNFIRMessaging.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNFIRMessaging.xcodeproj; path = "../node_modules/react-native-fcm/ios/RNFIRMessaging.xcodeproj"; sourceTree = "<group>"; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -359,6 +368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BE13CD61F804B82009FEC72 /* libRNFIRMessaging.a in Frameworks */,
 				8BDC11AB1F7C465A001DD893 /* libAirMaps.a in Frameworks */,
 				8BDC119B1F7C43C6001DD893 /* FBSDKMessengerShareKit.framework in Frameworks */,
 				8BDC119C1F7C43C6001DD893 /* FBSDKCoreKit.framework in Frameworks */,
@@ -551,6 +561,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				8BE13CD01F804B67009FEC72 /* RNFIRMessaging.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -618,6 +629,14 @@
 			isa = PBXGroup;
 			children = (
 				8BDC11AA1F7C45A8001DD893 /* libAirMaps.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8BE13CD11F804B67009FEC72 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8BE13CD51F804B67009FEC72 /* libRNFIRMessaging.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -839,6 +858,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 8BE13CD11F804B67009FEC72 /* Products */;
+					ProjectRef = 8BE13CD01F804B67009FEC72 /* RNFIRMessaging.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1074,6 +1097,13 @@
 			fileType = archive.ar;
 			path = libAirMaps.a;
 			remoteRef = 8BDC11A91F7C45A8001DD893 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8BE13CD51F804B67009FEC72 /* libRNFIRMessaging.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFIRMessaging.a;
+			remoteRef = 8BE13CD41F804B67009FEC72 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */ = {
@@ -1313,6 +1343,7 @@
 					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
 					"\"${PODS_ROOT}/FirebaseMessaging/Frameworks\"",
 					"\"$(SRCROOT)/../../../../Documents/FacebookSDKs\"",
+					"\"$(SRCROOT)/../node_modules/react-native-fcm/ios\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1327,6 +1358,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleToolboxForMac\"",
 					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
 					"\"$(SRCROOT)/../../../../Documents/FacebookSDKs\"",
+					"\"$(SRCROOT)/../node_modules/react-native-fcm/ios\"",
 				);
 				INFOPLIST_FILE = project/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1357,6 +1389,7 @@
 					"\"${PODS_ROOT}/FirebaseInstanceID/Frameworks\"",
 					"\"${PODS_ROOT}/FirebaseMessaging/Frameworks\"",
 					"\"$(SRCROOT)/../../../../Documents/FacebookSDKs\"",
+					"\"$(SRCROOT)/../node_modules/react-native-fcm/ios\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1371,6 +1404,7 @@
 					"\"${PODS_ROOT}/Headers/Public/GoogleToolboxForMac\"",
 					"\"${PODS_ROOT}/Headers/Public/Protobuf\"",
 					"\"$(SRCROOT)/../../../../Documents/FacebookSDKs\"",
+					"\"$(SRCROOT)/../node_modules/react-native-fcm/ios\"",
 				);
 				INFOPLIST_FILE = project/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
