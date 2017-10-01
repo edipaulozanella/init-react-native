@@ -12,6 +12,7 @@ import * as actions from "./redux/actions";
 
 var pgs = registerScreens();
 var store = createStore(reducers);
+actions.setStore(store);
 
 var Nav = StackNavigator(pgs);
 export default class App extends React.Component {
@@ -31,15 +32,9 @@ export default class App extends React.Component {
     this.storage();
   }
   storage() {
-    AsyncStorage.getItem("redux", (err, result) => {
-      if (result)
-        try {
-          store.dispatch(JSON.parse(result));
-        } catch (e) {}
-    });
+    actions.loadRedux();
     AppState.addEventListener("change", nextAppState => {
-      if (nextAppState != "active")
-        AsyncStorage.setItem("redux", JSON.stringify(store.getState()));
+      if (nextAppState != "active") actions.saveRedux();
     });
   }
   componentDidMount() {}
