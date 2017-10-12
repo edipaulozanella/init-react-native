@@ -46,7 +46,7 @@
     NSLog (@"%@: %@", fontFamily, fontNames);
   }
   
-  [FIRApp configure];
+//  [FIRApp configure];
   [[UNUserNotificationCenter currentNotificationCenter] setDelegate:self];
   
   return [[FBSDKApplicationDelegate sharedInstance] application:application
