@@ -181,18 +181,45 @@ export function parseNumeroDuasCasas(string) {
   }
 }
 
-export function startsWith(string, key) {
-  if (string) {
-    string = string + "";
-  } else {
-    return false;
+export function  contemString(string, key) {
+    if (!string || !key) {
+      return false;
+    }
+    try {
+      string = string+"";
+      if (string && string.indexOf(key) >= 0) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (e) {
+      return false;
+    }
   }
-  if (string && string.indexOf(key) === 0) {
-    return true;
-  } else {
-    return false;
+ export function startsWith (string, key) {
+    if(string){
+      string = string+"";
+    }else{
+      return false;
+    }
+    if (string && string.indexOf(key) === 0) {
+      return true;
+    } else {
+      return false;
+    }
   }
-}
+ export function endWith (string, key) {
+    if(string){
+      string = string+"";
+    }else{
+      return false;
+    }
+    if (string && string.indexOf(key, string.length - key.length) === 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 export function cleanString(s) {
   if (!s) {
