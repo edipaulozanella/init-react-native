@@ -6,6 +6,11 @@ import { Model, Query, Cloud } from "./infra";
 import { Provider, connect } from "react-redux";
 import { registerScreens } from "./index.pages.js";
 
+var pt =require('moment/locale/pt-br');
+var moment = require("moment");
+moment.locale('pt-br');
+
+
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import reducers from "./redux/reducer";
 import * as actions from "./redux/actions";
