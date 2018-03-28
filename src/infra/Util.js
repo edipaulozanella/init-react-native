@@ -1,5 +1,20 @@
 import { Platform, Linking } from "react-native";
 
+// var make_token = require("jsonwebtoken");
+
+// export function parseToken(token) {
+//   try {
+//     var decoded = make_token.verify(token, "abrate");
+//     return decoded;
+//   } catch (err) {
+//     return false;
+//   }
+// }
+// export function makeToken(obj) {
+//   var token = make_token.sign(obj, "abrate", { noTimestamp: true });
+//   return token;
+// }
+
 export function parseCnae(value) {
   var str = value; //"63.11-9-00";
   if (value) {
@@ -8,6 +23,20 @@ export function parseCnae(value) {
     str = str.replace(".", "");
     var res = str.substring(0, str.length - 2);
     return parseInt(res);
+  } else {
+    return value;
+  }
+}
+
+export function subString(value, limit) {
+  var str = value + ""; //"63.11-9-00";
+  var limit = Number(limit);
+  if (value && limit) {
+    if (str.length > limit) {
+      return str.substring(0, limit) + "...";
+    } else {
+      return str;
+    }
   } else {
     return value;
   }
@@ -181,45 +210,58 @@ export function parseNumeroDuasCasas(string) {
   }
 }
 
-export function  contemString(string, key) {
-    if (!string || !key) {
-      return false;
-    }
-    try {
-      string = string+"";
-      if (string && string.indexOf(key) >= 0) {
-        return true;
-      } else {
-        return false;
-      }
-    } catch (e) {
-      return false;
-    }
+export function contemString(string, key) {
+  if (!string || !key) {
+    return false;
   }
- export function startsWith (string, key) {
-    if(string){
-      string = string+"";
-    }else{
-      return false;
-    }
-    if (string && string.indexOf(key) === 0) {
+  try {
+    string = string + "";
+    if (string && string.indexOf(key) >= 0) {
       return true;
     } else {
       return false;
     }
+  } catch (e) {
+    return false;
   }
- export function endWith (string, key) {
-    if(string){
-      string = string+"";
-    }else{
-      return false;
-    }
-    if (string && string.indexOf(key, string.length - key.length) === 0) {
-      return true;
-    } else {
-      return false;
-    }
+}
+export function startsWith(string, key) {
+  if (string) {
+    string = string + "";
+  } else {
+    return false;
   }
+  if (string && string.indexOf(key) === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+export function endWith(string, key) {
+  if (string) {
+    string = string + "";
+  } else {
+    return false;
+  }
+  if (string && string.indexOf(key, string.length - key.length) === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export function cleanNumber(string) {
+  try {
+    string = string + "";
+    // console.log(string);"de33sl".replace(/[^,.,0-9]/g, '')
+    var val = string.replace(",", ".");
+    val = val.replace(/[^,-.,0-9]/g, "");
+    return val.trim();
+  } catch (e) {
+    // console.log(e);
+    return "";
+  }
+}
 
 export function cleanString(s) {
   if (!s) {

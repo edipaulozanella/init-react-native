@@ -1,7 +1,7 @@
 var host = "http://192.168.1.101:5000/v1";
   var host = "http://localhost:5000/v1";
 // var host = "https://api.meu.training/v1";
-var token_api = "fajsdflkj";
+var token_api = "a9434866b8b19d7b416b4ea0752f005d";
 var token_user = "";
 
 module.exports = {
