@@ -1,9 +1,10 @@
-var host = "http://192.168.1.101:5000/v1";
-  var host = "http://localhost:5000/v1";
-// var host = "https://api.meu.training/v1";
-var token_api = "a9434866b8b19d7b416b4ea0752f005d";
+var host = "https://apiv2.seu.delivery/v1";
+// var host = "http://localhost:3002/v2";
+// var host = "http://165.227.218.55:3002/v2";
+//var host = "http://192.168.25.194:5100/v1";
+var token_api = "0d7366a14e0f0fd2df0161c691779983";
 var token_user = "";
-
+var token_empresa = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOjEyfQ.5ibtWJSJ_6sTOM3Cq_7FHIBJVfJyuuD4sEObvorWpkY";
 module.exports = {
   getHost() {
     return host;
@@ -26,11 +27,19 @@ module.exports = {
       body: JSON.stringify(data)
     };
     if (token_api) {
-      config.headers["x-request-id"] = token_api;
+     // config.headers["x-request-id"] = token_api;
+      config.headers["token_api"] = token_api;
+
     }
     if (token_user) {
       config.headers["token-user"] = token_user;
     }
+    if (token_empresa) {
+      config.headers["token-empresa"] = token_empresa;
+    }
+
+    //console.log(url, config)
+
     fetch(url, config)
       .then(response => {
         this.resolverResponse(response, retorno);
@@ -46,10 +55,12 @@ module.exports = {
       var lista = Object.keys(data);
       for (var i = 0; i < lista.length; i++) {
         var item = lista[i];
+        if (data[item] + "" == "undefined" || data[item] + "" == "null" || data[item] + "" == "" || data[item] + "" == "false") continue;
         if (i != 0) {
           url += "&";
         }
-        url += "" + item + "=" + encodeURI(data[item]);
+        // url += "" + item + "=" + encodeURI(data[item]);
+        url += "" + item + "=" + (this.isObject(data[item]) || this.isArray(data[item]) ? JSON.stringify(data[item]) : encodeURI(data[item]));
       }
     }
     var config = {
@@ -65,6 +76,11 @@ module.exports = {
     if (token_user) {
       config.headers["token-user"] = token_user;
     }
+    if (token_empresa) {
+      config.headers["token-empresa"] = token_empresa;
+    }
+
+    //console.log(config)
     fetch(url, config)
       .then(response => {
         this.resolverResponse(response, retorno);
@@ -90,6 +106,10 @@ module.exports = {
     if (token_user) {
       config.headers["token-user"] = token_user;
     }
+    if (token_empresa) {
+      config.headers["token-empresa"] = token_empresa;
+    }
+    console.log(url, config)
     fetch(url, config)
       .then(response => {
         this.resolverResponse(response, retorno);
@@ -134,5 +154,19 @@ module.exports = {
         retorno(responseData);
       }
     });
+  },
+  isObject(val) {
+    return typeof val === "object";
+  },
+
+  isArray(object) {
+    if (object && JSON.stringify(object) == "[]") {
+      return true;
+    }
+    if (object && object.constructor && object.constructor === Array) {
+      return true;
+    } else {
+      return false;
+    }
   }
 };

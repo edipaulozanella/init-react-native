@@ -1,22 +1,29 @@
 import React, { Component } from "react";
-import { StyleSheet, Content, View, Navigator } from "react-native-1app";
+
+import { Content } from "react-native-1app";
+import { StyleSheet, View } from "react-native";
+import Dashboard from "./dashboard/Dashboard.js";
+import Login from "./Login.js";
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
+    // this.state = {user:this.props.screenProps.store.getState().user};
     this.state = {};
-    Navigator.cloneState(this);
-    //this.onConstructor(props,this.state)
   }
-
-  //START CODE
-
-  //END CODE
 
   render() {
     return (
       <Content style={styles.content}>
-        <View style={styles.view} />
+          <Dashboard
+            style={styles.fragment1}
+            screenProps={this.props.screenProps}
+            navigation={this.props.navigation}
+            activity={this}
+          />
+       
+
+        
       </Content>
     );
   }
@@ -24,19 +31,19 @@ export default class Home extends Component {
 
 var styles = StyleSheet.create({
   content: {
-    backgroundColor: "rgba(255,255,255,1)",
+    backgroundColor: "rgba(218,218,218,1)",
     alignSelf: "stretch",
     flex: 1,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    alignItems: "center",
+    justifyContent: "center",
     flexDirection: "column"
   },
-  view: {
+  fragment1: {
     alignSelf: "stretch",
-    flex: 1,
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
-    flexDirection: "column",
-    backgroundColor: "rgba(129,105,105,0.58)"
+    flex: 1
+  },
+  fragment2: {
+    alignSelf: "stretch",
+    flex: 1
   }
 });
