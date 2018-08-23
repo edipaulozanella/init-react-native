@@ -5,9 +5,9 @@
   "scripts": {
     "app": "react-native run-android --variant=release",
     "docs": "documentation build ./src/redux/ -f md -o README.md",
-    "android": "react-native bundle --platform android --dev false --entry-file index.android.js   --bundle-output android/app/src/main/assets/index.android.bundle   --assets-dest android/app/src/main/res/",
-    "ios": "react-native bundle --platform ios --dev false --entry-file index.ios.js   --bundle-output ios/main.jsbundle   --assets-dest ios/",
-    "ios2": "react-native bundle --platform ios --dev false --entry-file index.ios.js   --bundle-output ios/main.bundle   --assets-dest ios/",
+    "android": "react-native bundle --platform android --dev false --entry-file index.js   --bundle-output android/app/src/main/assets/index.android.bundle   --assets-dest android/app/src/main/res/",
+    "ios": "react-native bundle --platform ios --dev false --entry-file index.js   --bundle-output ios/main.jsbundle   --assets-dest ios/",
+    "ios2": "react-native bundle --platform ios --dev false --entry-file index.js   --bundle-output ios/main.bundle   --assets-dest ios/",
     "start": "node node_modules/react-native/local-cli/cli.js start",
      "android-production": "cd android && ./gradlew assembleRelease",
     "android-debug": "cd android && ./gradlew assembleDebug",
