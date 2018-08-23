@@ -97,14 +97,12 @@ export function reenviarSenhaTelefone(email, callback) {
 export function loginFacebook(callback) {
 
   getFBToken(token => {
-    console.log(token)
     if (token) {
       Cloud.get(
         "login/dash/facebook",
         { fb_token: token },
         (user,erro) => {
           // console.log(erro);
-          console.log(5959,user, erro)
           if (user && !user.error) {
             Cloud.setTokenUser(user.token)
             callback(user);

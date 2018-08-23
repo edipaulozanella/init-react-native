@@ -19,7 +19,7 @@ export default class Abertura extends Component {
       <Content style={styles.content}>
         <Image
           style={styles.image}
-          source={require("../../img/vasado.png")}
+          source={require("../../img/logo.png")}
           resizeMode={"contain"}
         />
       </Content>
@@ -29,7 +29,7 @@ export default class Abertura extends Component {
 
 var styles = StyleSheet.create({
   content: {
-    backgroundColor: "#8c0000",
+    backgroundColor: "rgba(218,218,218,1)",
     alignSelf: "stretch",
     flex: 1,
     alignItems: "center",

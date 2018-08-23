@@ -76,15 +76,11 @@ export default class Pesquisa extends Component {
             returnKeyType='search'
             ref={v => (this.textinputBusca = v)}
           />
-          <TouchableOpacity
-            style={styles.button}
-          >
-            <Icon
-              style={styles.icon}
-              fromFontFamily={"Material Design Icons"}
-            name={"magnify"}
-            />
-          </TouchableOpacity>
+          <Image
+            style={styles.image}
+            source={require("../../img/logo.png")}
+            resizeMode={"contain"}
+          />
         </TitleBar>
         <FlatList
           style={styles.flatlist}
@@ -172,7 +168,7 @@ var styles = StyleSheet.create({
     flexDirection: "row",
     alignSelf: "stretch",
     height: 50,
-    backgroundColor: "#8c0000",
+    backgroundColor: "rgba(218,218,218,1)",
   },
   button: {
     alignSelf: "stretch",
@@ -183,7 +179,7 @@ var styles = StyleSheet.create({
     width: 50
   },
   icon: {
-    color: "rgba(255,255,255,1)",
+    color: "rgba(66,66,66,1)",
     fontSize: 25
   },
   textinput: {
@@ -246,7 +242,7 @@ var styles = StyleSheet.create({
     alignItems: "center",
     height: 50,
     flexDirection: "row",
-    backgroundColor: "#8c0000",
+    backgroundColor: "rgba(0,137,216,1)",
     width: 200,
     borderRadius: 4,
     marginBottom:30

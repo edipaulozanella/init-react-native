@@ -32,12 +32,10 @@
         android:value="{key_mapa}"/>
 
         <!--add FacebookActivity-->
-        <activity
-          android:name="com.facebook.FacebookActivity"
-          android:label="{nome}" 
-      android:launchMode="singleTop"
-      android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-      android:windowSoftInputMode="adjustResize"/>
+         <activity
+       android:name="com.facebook.FacebookActivity"
+       android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+       android:label="@string/app_name" />
 
           <!--reference your fb_app_id-->
           <meta-data

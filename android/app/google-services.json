@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "304081423042",
+    "firebase_url": "https://megasteam-9f646.firebaseio.com",
+    "project_id": "megasteam-9f646",
+    "storage_bucket": "megasteam-9f646.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304081423042:android:b7938d5960b70083",
+        "android_client_info": {
+          "package_name": "com.delivery.branco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304081423042-g89nsm579ed11c6eiatb70f8vvg08rhp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_FimMGdHSyOyXCOgWloqwdNL4KrauasE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,14 +1,4 @@
 export const LOGIN = 'LOGIN';
 export const LOGOUT = 'LOGOUT';
-export const EMPRESA = "EMPRESA";
-export const PRODUTOS = 'PRODUTOS';
-export const PRODUTO_FOCO = 'PRODUTO_FOCO';
-export const HORARIOS = 'HORARIOS';
 export const INIT = 'INIT';
 export const LISTABUSCA = 'LISTABUSCA';
-export const PEDIDO = 'PEDIDO';
-export const SETCARRINHO = 'SETCARRINHO';
-export const SET_ENDERECOS_USER = 'SET_ENDERECOS_USER';
-export const INIT_PEDIDO = 'INIT_PEDIDO';
-export const TENP_ADICIONAR_OPCIONAIS = 'TENP_ADICIONAR_OPCIONAIS';
-export const SET_HORARIO_ATENDIMENTO = 'SET_HORARIO_ATENDIMENTO'; 

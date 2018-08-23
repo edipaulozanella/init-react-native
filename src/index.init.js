@@ -1,13 +1,15 @@
 import React from "react";
 import { AppRegistry, AppState, StyleSheet, AsyncStorage } from "react-native";
-import { View, Icon, Image, Navigator, ImageUpload } from "react-native-1app";
+import { View,ImageUpload,FlashMessage,InitApp } from "react-native-1app";
 import { StackNavigator } from "react-navigation";
 import { Cloud } from "./infra";
 import { Provider, connect } from "react-redux";
 import { registerScreens } from "./index.pages.js";
-import { registerLoginScreens } from "./index.login.js";
 import Abertura from "./views/Abertura";
-import * as Action from "./redux/actions";
+// import FlashMessage from "react-native-flash-message";
+
+
+
 var pt = require("moment/locale/pt-br");
 var moment = require("moment");
 moment.locale("pt-br");
@@ -18,42 +20,39 @@ import * as actions from "./redux/actions";
 // import * as login from "./redux/actions/login";
 
 var pgs = registerScreens();
-var pgsLogin = registerLoginScreens();
 var store = createStore(reducers);
 console.disableYellowBox = true;
 
-var NavLogin = StackNavigator(pgsLogin);
 var Nav = StackNavigator(pgs);
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { abertura: true,      
-    };
-    Action.setStore(store);
-    Action.loadRedux(store.dispatch);
+    this.state = { abertura: true };
+    actions.setStore(store);
+    // actions.loadRedux()
     ImageUpload.setHost(Cloud.getHost());
     // File.setHost(Cloud.getHost());
     ImageUpload.setToken(Cloud.getToken());
     // File.setToken(Cloud.setToken());
+
+
   }
 
   componentDidMount() {
-    this.unsubscribe = store.subscribe(() => {
-      var state = store.getState();
-      if (state.user != this.state.user) {
-        this.setState({ user: state.user });
-      }
-    });
 
     setTimeout(() => {
       this.setState({ abertura: false });
+      // console.log(store.getState());
+      // if(store.getState().user_local&&store.getState().user_local.objectId) saveToken(store.getState().user_local.objectId);
     }, 1500);
-
+    // setTimeout(() => {
+    //   this.showScaleAnimationDialog();
+    // }, 15000);
     // login.loadUser(user => {
     //   store.dispatch(actions.logar(user,store));
     // });
     AppState.addEventListener("change", state => {
-      if (state == "inactive" || state == "background") actions.saveRedux();
+      if (state == "inactive"||state == "background") actions.saveRedux();
     });
   }
 
@@ -67,30 +66,21 @@ export default class App extends React.Component {
     if (this.state.abertura) {
       return <Abertura />;
     }
-
-    if (!this.state.user) {
-      return (
+    return (
+      <View style={{  alignSelf: "stretch",
+        flex: 1}}>
         <Provider store={store}>
-          <NavLogin
+          <Nav
             {...this.props}
             store={store}
             screenProps={screenProps}
             onNavigationStateChange={null}
             store={store}
-          />
+            />
         </Provider>
-      );
-    }
-    return (
-      <Provider store={store}>
-        <Nav
-          {...this.props}
-          store={store}
-          screenProps={screenProps}
-          onNavigationStateChange={null}
-          store={store}
-        />
-      </Provider>
+        <InitApp {...this.props}/>
+      </View>
+
     );
   }
 }

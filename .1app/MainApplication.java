@@ -3,7 +3,6 @@ package {key_package_android};
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
-import com.reactlibrary.PDFViewPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import org.reactnative.camera.RNCameraPackage;
 import com.horcrux.svg.SvgPackage;
@@ -45,7 +44,6 @@ public class MainApplication extends Application implements ReactApplication {
         new MapsPackage(),
       new MainReactPackage(),
       new VectorIconsPackage(),
-      new PDFViewPackage(),
       new RNCameraPackage(),
       new SvgPackage(),
        
