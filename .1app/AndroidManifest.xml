@@ -37,7 +37,7 @@
           android:label="{nome}" 
       android:launchMode="singleTop"
       android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-      android:windowSoftInputMode="adjustResize">
+      android:windowSoftInputMode="adjustResize"/>
 
           <!--reference your fb_app_id-->
           <meta-data
@@ -51,7 +51,7 @@
               android:screenOrientation="portrait"
               android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
       android:windowSoftInputMode="adjustResize">
-      
+
               <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

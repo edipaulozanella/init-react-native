@@ -88,7 +88,6 @@ dependencies {
     compile project(':react-native-fcm')
     compile project(':react-native-google-signin')
 
-    compile project(':react-native-view-pdf')
     compile project(':react-native-vector-icons')
     compile project(':react-native-camera')
 
