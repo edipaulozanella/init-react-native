@@ -20,7 +20,7 @@
     "moment": "^2.22.2",
     "react": "16.4.1",
     "react-native": "0.56.0",
-    "react-native-1app": "^3.0.2",
+    "react-native-1app": "^3.5.1",
     "react-native-camera": "^1.2.0",
     "react-native-fbsdk": "^0.7.0",
     "react-native-fcm": "^16.2.0",
