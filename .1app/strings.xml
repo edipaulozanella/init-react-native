@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">{nome}</string>
     <string name="fb_app_id">{key_id_app_facebook}</string>
+    <string name="app_id">{key_id_app_facebook}</string>
+    <string name="facebook_app_id">{key_id_app_facebook}</string>
+    <string name="fb_login_protocol_scheme">fb{key_id_app_facebook}</string>
 </resources>
