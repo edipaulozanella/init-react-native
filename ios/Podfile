@@ -34,6 +34,7 @@ pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
   pod 'FBSDKShareKit'
  
   pod 'react-native-camera', path: '../node_modules/react-native-camera'
+  pod 'react-native-image-picker', path: '../node_modules/react-native-image-picker'
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
   
